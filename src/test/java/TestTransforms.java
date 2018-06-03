@@ -49,13 +49,15 @@ public class TestTransforms {
   public static void beforeClass() throws Exception {
     GSetGenerator.clear();
     gset = GSetGenerator.getGSet((short) 2, 3, 100);
-    NNAnalyticsRestAPI.initAuth(false, false);
-    NNAnalyticsRestAPI.initRestServer();
-    loader = NNAnalyticsRestAPI.initLoader(gset, false);
+    NNAnalyticsRestAPI nna = new NNAnalyticsRestAPI();
+    nna.initAuth(false, false);
+    nna.initRestServer();
+    loader = nna.initLoader(gset, false);
   }
 
   @AfterClass
   public static void tearDown() {
+    loader.clear();
     Spark.stop();
   }
 
