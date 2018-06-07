@@ -279,7 +279,7 @@ public class SuggestionsEngine {
 
     VirtualINodeTree tree = new VirtualINodeTree();
     cachedDirs.forEach(tree::addElement);
-    List<String> commonRoots = tree.getCommonRootsAsStrings();
+    List<String> commonRoots = tree.getCommonAncestorsAsStrings();
 
     for (String commonRoot : commonRoots) {
       Collection<INode> commonINodes =
