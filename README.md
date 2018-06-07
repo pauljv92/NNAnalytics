@@ -19,8 +19,12 @@ If you are building for 2.5.x you can re-use the 2.4.x build.
 ## How to test locally:
 
 1. (Temporary measure) Create a directory for NNA to use: `mkdir /usr/local/nn-analytics`.
-2. Run the `public static void main` method in `TestNNAnalytics.java` under `src/test/java`.
+2. (a) Run the `public static void main` method in `TestNNAnalytics.java` under `src/test/java`.
+2. (b) Run the JUnit test `testAddFiles()` in `TestWithMiniCluster.java` under `src/test/java`.
 3. A local instance of NNA should start and be accessible at http://localhost:4567.
+
+If you chose to run the MiniCluster tests you can refresh http://localhost:4567/suggestion.html
+and you should see updates streaming in every couple of minutes.
 
 ## How to build:
 
